@@ -1,17 +1,17 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/page1/page1"
   ],
   "usingComponents": {
     "t-button": "tdesign-miniprogram/button/button",
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-image": "tdesign-miniprogram/image/image",
     "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
-    "t-cell": "tdesign-miniprogram/cell/cell"
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-navbar": "tdesign-miniprogram/navbar/navbar"
   },
   "window": {
-    "navigationBarBackgroundColor": "#ffffff",
-    "backgroundColor": "#eeeeee",
-    "backgroundTextStyle": "light"
+    "navigationStyle": "custom"
   }
 }

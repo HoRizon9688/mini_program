@@ -1,15 +1,18 @@
-<!--index.wxml-->
+<!-- 导航栏 -->
 <t-navbar>
   <view slot="left">
     <t-image t-class="custom-image" src="{{image}}" aria-label="导航栏图片" />
   </view>
 </t-navbar>
 
+<!-- 圆形主视图 -->
 <view class="imgbox">
     <t-image src="{{imageSrc}}" width="180" height="180" shape="circle" aria-label="项目图片" />
 </view>
+
+<!-- 功能选项 -->
 <t-cell-group theme="card">
-  <t-cell class="mycell" title="单行标题" leftIcon="service" hover arrow />
+  <t-cell bindtap="process" class="mycell" title="单行标题" leftIcon="service" hover arrow />
   <t-cell class="mycell" title="单行标题" leftIcon="internet" hover arrow />
   <t-cell class="mycell" title="单行标题" leftIcon="lock-on" hover arrow />
 </t-cell-group>
