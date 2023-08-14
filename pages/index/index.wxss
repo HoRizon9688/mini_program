@@ -1,0 +1,23 @@
+/**index.wxss**/
+.button-example {
+    margin: 0 32rpx;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32rpx;
+  }
+.custom-image {
+height: 48rpx;
+width: 200rpx;
+margin-left: 20rpx;
+}
+
+.imgbox {
+display: flex;
+justify-content: center;
+margin-top: 60rpx;
+margin-bottom: 120rpx;
+}
+
+.mycell{
+    height:60rpx;
+}
