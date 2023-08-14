@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/page1/page1"
+    "pages/page1/page1",
+    "pages/link/link"
   ],
   "usingComponents": {
     "t-button": "tdesign-miniprogram/button/button",

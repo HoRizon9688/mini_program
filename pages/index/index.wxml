@@ -14,5 +14,5 @@
 <t-cell-group theme="card">
   <t-cell bindtap="process" class="mycell" title="单行标题" leftIcon="service" hover arrow />
   <t-cell class="mycell" title="单行标题" leftIcon="internet" hover arrow />
-  <t-cell class="mycell" title="单行标题" leftIcon="lock-on" hover arrow />
+  <t-cell bindtap="scanCodeEvent" class="mycell" title="单行标题" leftIcon="lock-on" hover arrow />
 </t-cell-group>
