@@ -19,5 +19,10 @@ margin-bottom: 120rpx;
 }
 
 .mycell{
-    height:60rpx;
+    --td-cell-bg-color:#F8F9F9;
+    --td-cell-height:150rpx;
+    --td-cell-border-color:#D5DBDB;
+    --td-cell-left-icon-font-size:60rpx;
+    --td-cell-title-font-size:40rpx;
+    --td-cell-border-color:#566573;
 }
