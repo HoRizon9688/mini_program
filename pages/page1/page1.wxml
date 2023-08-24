@@ -1,3 +1,5 @@
 <view class="block">
-  <t-navbar class="block" title="标题文字" left-arrow bind:go-back="handleBack" />
+  <t-navbar class="block" title="" left-arrow bind:go-back="handleBack" />
 </view>
+<mp-html content="{{html}}" />
+

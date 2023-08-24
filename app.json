@@ -5,6 +5,7 @@
     "pages/link/link"
   ],
   "usingComponents": {
+    "mp-html": "mp-html",
     "t-button": "tdesign-miniprogram/button/button",
     "t-icon": "tdesign-miniprogram/icon/icon",
     "t-image": "tdesign-miniprogram/image/image",

@@ -19,9 +19,10 @@ Component({
                 success(res){
                     console.log("扫码成功："+JSON.stringify(res))
                     paperSrc = res.result
-                wx.navigateTo({
-                  url: '/pages/link/link?paperSrc=' + paperSrc,
-                })
+                    // 跨页面传值，paperSrc为对应的题库路径，跳转到link页
+                    wx.navigateTo({
+                    url: '/pages/link/link?paperSrc=' + paperSrc,
+                    })
                 }
             })
         }
