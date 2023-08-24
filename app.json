@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/page1/page1",
-    "pages/link/link"
+    "pages/link/link",
+    "pages/sign-page/sign-page"
   ],
   "usingComponents": {
     "mp-html": "mp-html",

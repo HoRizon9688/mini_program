@@ -1,5 +1,6 @@
 Component({
     data: {
+        signImage: '',
         html: '<h2 align="center">安全生产告知书</h2>'+
               '<br/>'+
               '<p style="text-indent: 2em;margin:0 4px">外来单位全体人员：请认真阅读本告知书，以保证您进入我公司场区升压站内能够保证人身及设备安全行为。</p>'+
@@ -28,5 +29,17 @@ Component({
         handleBack() {
             console.log('go back');
         },
+        navToSignPage() {
+            wx.navigateTo({
+                url: '../sign-page/sign-page',
+                events: {
+                    getSignImage: image => {
+                        this.setData({
+                            signImage: image
+                        })
+                    }
+                },
+            })
+        }
     },
 });
