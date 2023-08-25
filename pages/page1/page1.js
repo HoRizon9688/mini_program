@@ -1,7 +1,7 @@
 Component({
     data: {
         signImage: '',
-        html: '<h2 align="center">安全生产告知书</h2>'+
+        html: '<h2 align="center">作业人员安全告知书</h2>'+
               '<br/>'+
               '<p style="text-indent: 2em;margin:0 4px">外来单位全体人员：请认真阅读本告知书，以保证您进入我公司场区升压站内能够保证人身及设备安全行为。</p>'+
               '<ol>'+

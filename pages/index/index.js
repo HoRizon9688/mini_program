@@ -6,10 +6,10 @@ Component({
       imageSrc: '/source/img4.jpg',
     },
     methods:{
-        process: function(){
-            // wx.navigateTo({
-            //   url: '/pages/page1/page1',
-            // })
+        jumpPage3: function(){
+            wx.navigateTo({
+              url: '/pages/page3/page3',
+            })
         },
         scanCodeEvent: function(){
             var paperSrc;
@@ -33,13 +33,13 @@ Component({
                 console.log(res)
                 // console.log(res.tapIndex)
                 if (0 == res.tapIndex) {
-                  wx.showToast({
-                    title: '参观',
-                  })
+                    wx.navigateTo({
+                        url: '/pages/page2/page2',
+                      })
                 } else if (1 == res.tapIndex) {
-                  wx.navigateTo({
-                    url: '/pages/page1/page1',
-                  })
+                    wx.navigateTo({
+                        url: '/pages/page1/page1',
+                    })
                 }
               },
               fail: function (res) {
