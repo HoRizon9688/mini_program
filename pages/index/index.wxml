@@ -12,7 +12,8 @@
 
 <!-- 功能选项 -->
 <t-cell-group theme="card">
-  <t-cell bindtap="process" class="mycell" title="项目简介" leftIcon="service" hover arrow />
-  <t-cell class="mycell" title="安全告知" leftIcon="internet" hover arrow />
-  <t-cell bindtap="scanCodeEvent" class="mycell" title="安规答题" leftIcon="lock-on" hover arrow />
+  <t-cell bindtap="process" class="mycell" title="项目简介" image="/source/house.svg" hover arrow />
+  <t-cell bindtap="choose" class="mycell" title="安全告知" image="/source/security-advice.svg" hover arrow />
+  <t-cell bindtap="" class="mycell" title="安全交底" image="/source/safety-briefing.svg" hover arrow />
+  <t-cell bindtap="scanCodeEvent" class="mycell" title="安规答题" image="/source/examination.svg" hover arrow />
 </t-cell-group>

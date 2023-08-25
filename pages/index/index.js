@@ -7,9 +7,9 @@ Component({
     },
     methods:{
         process: function(){
-            wx.navigateTo({
-              url: '/pages/page1/page1',
-            })
+            // wx.navigateTo({
+            //   url: '/pages/page1/page1',
+            // })
         },
         scanCodeEvent: function(){
             var paperSrc;
@@ -25,6 +25,27 @@ Component({
                     })
                 }
             })
-        }
+        },
+        choose: function() {
+            wx.showActionSheet({
+              itemList: ['参观人员', '作业人员'],
+              success: function (res) {
+                console.log(res)
+                // console.log(res.tapIndex)
+                if (0 == res.tapIndex) {
+                  wx.showToast({
+                    title: '参观',
+                  })
+                } else if (1 == res.tapIndex) {
+                  wx.navigateTo({
+                    url: '/pages/page1/page1',
+                  })
+                }
+              },
+              fail: function (res) {
+                console.log(res.errMsg)
+              }
+            })
+          }
     }
   })
