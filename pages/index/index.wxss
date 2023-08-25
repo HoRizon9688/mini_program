@@ -6,7 +6,7 @@
     gap: 32rpx;
   }
 .custom-image {
-height: 48rpx;
+height: 65rpx;
 width: 200rpx;
 margin-left: 20rpx;
 }

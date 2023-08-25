@@ -2,8 +2,8 @@
 Component({
     data: {
       mytext:"test",
-      image: 'https://tdesign.gtimg.com/miniprogram/images/logo1.png',
-      imageSrc: '/source/img1.jpg',
+      image: '/source/logo.png',
+      imageSrc: '/source/img4.jpg',
     },
     methods:{
         process: function(){

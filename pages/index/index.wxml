@@ -7,12 +7,12 @@
 
 <!-- 圆形主视图 -->
 <view class="imgbox">
-    <t-image src="{{imageSrc}}" width="180" height="180" shape="circle" aria-label="项目图片" />
+    <t-image src="{{imageSrc}}" mode="scaleToFill" width="200" height="200" shape="circle" aria-label="项目图片" />
 </view>
 
 <!-- 功能选项 -->
 <t-cell-group theme="card">
-  <t-cell bindtap="process" class="mycell" title="单行标题" leftIcon="service" hover arrow />
-  <t-cell class="mycell" title="单行标题" leftIcon="internet" hover arrow />
-  <t-cell bindtap="scanCodeEvent" class="mycell" title="单行标题" leftIcon="lock-on" hover arrow />
+  <t-cell bindtap="process" class="mycell" title="项目简介" leftIcon="service" hover arrow />
+  <t-cell class="mycell" title="安全告知" leftIcon="internet" hover arrow />
+  <t-cell bindtap="scanCodeEvent" class="mycell" title="安规答题" leftIcon="lock-on" hover arrow />
 </t-cell-group>
