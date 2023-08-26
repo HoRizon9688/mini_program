@@ -1,3 +1,39 @@
+<!-- 导航栏 -->
 <view class="block">
-  <t-navbar class="block" title="" left-arrow bind:go-back="handleBack" />
+  <t-navbar class="block" title="安全技术交底记录表" left-arrow bind:go-back="handleBack" />
 </view>
+
+<!-- 输入框 -->
+<t-input label="工程名称" placeholder="请输入文字" bindchange="inputChange" disabled="{{flag}}" model:value="{{inputValue}}"></t-input>
+<!-- <t-input label="承包商" placeholder="请输入文字" bindchange="inputChange" disabled="{{flag}}"></t-input>
+<t-input label="工作负责人" placeholder="请输入文字" bindchange="inputChange" disabled="{{flag}}"></t-input>
+<t-input label="交底人" placeholder="请输入文字" bindchange="inputChange" disabled="{{flag}}"></t-input> -->
+
+<!-- 日期选择器 -->
+<t-cell
+  title="交底时间"
+  hover
+  note="{{dateText || ''}}"
+  arrow
+  data-mode="date"
+  bindtap="showPicker"
+  class="test"
+  t-class="panel-item"
+/>
+<!-- 年月日 -->
+<t-date-time-picker
+  title="选择日期"
+  visible="{{dateVisible}}"
+  mode="date"
+  defaultValue="{{date}}"
+  format="YYYY-MM-DD"
+  bindchange="onConfirm"
+  bindpick="onColumnChange"
+  bindcancel="hidePicker"
+  start="{{start}}"
+  end="{{end}}"
+/>
+
+<!-- 提交按钮 -->
+<t-button theme="primary" bindtap="submit">提交</t-button>
+<t-button theme="primary" bindtap="clear">重新输入</t-button>

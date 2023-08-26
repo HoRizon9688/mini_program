@@ -14,7 +14,9 @@
     "t-image": "tdesign-miniprogram/image/image",
     "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
     "t-cell": "tdesign-miniprogram/cell/cell",
-    "t-navbar": "tdesign-miniprogram/navbar/navbar"
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-date-time-picker": "tdesign-miniprogram/date-time-picker/date-time-picker"
   },
   "window": {
     "navigationStyle": "custom"
