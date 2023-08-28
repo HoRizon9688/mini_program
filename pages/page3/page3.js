@@ -1,7 +1,9 @@
 Page({
     data: {
       flag: false,
-      inputValue:'',
+      inputProject:'',
+      inputCompany:'',
+      inputLeader:'',
       mode: '',
       dateVisible: false,
       date: new Date('2023-01-01').getTime(), // 支持时间戳传入
@@ -22,18 +24,38 @@ Page({
     },
       // 读取并载入缓存
     onShow: function(){
-        let userInput = wx.getStorageSync('key')
-        let date = wx.getStorageSync('date')
-        console.log(userInput)
-        console.log(date)
-        if (userInput){
+        let user_project = wx.getStorageSync('project')
+        let user_company = wx.getStorageSync('company')
+        let user_leader = wx.getStorageSync('leader')
+        let user_date = wx.getStorageSync('date')
+        let user_person = wx.getStorageSync('person')
+        // console.log(user_project)
+        // console.log(user_company)
+        // console.log(user_leader)
+        // console.log(user_date)
+        if (user_project){
             this.setData({
-                inputValue: userInput
+                inputProject: user_project
             })
         }
-        if (date){
+        if (user_company){
             this.setData({
-                dateText: date
+                inputCompany: user_company
+            })
+        }
+        if (user_leader){
+            this.setData({
+                inputLeader: user_leader
+            })
+        }
+        if (user_date){
+            this.setData({
+                dateText: user_date
+            })
+        }
+        if (user_person){
+            this.setData({
+                personText: user_person
             })
         }
     },
@@ -46,7 +68,8 @@ Page({
           [`${key}Value`]: value,
           [`${key}Text`]: value.join(' '),
         });
-        console.log(value.toString())
+        console.log(this.data.personText)
+        wx.setStorageSync('person', this.data.personText)
       },
     onPickerCancel(e) {
         const { key } = e.currentTarget.dataset;
@@ -60,22 +83,41 @@ Page({
         this.setData({ personVisible: true });
         },
 
-    inputChange(e){
-        console.log(e)
-        console.log(this.data)
-        wx.setStorageSync('key',this.data.inputValue)
+    Project_inputChange(e){
+        // console.log(e)
+        wx.setStorageSync('project',this.data.inputProject)
+    },
+    Company_inputChange(e){
+        // console.log(e)
+        wx.setStorageSync('company', this.data.inputCompany)
+    },
+    Leader_inputChange(e){
+        // console.log(e)
+        wx.setStorageSync('leader', this.data.inputLeader)
     },
     submit(){
-        console.log(this.data.inputValue)
+        console.log(this.data.inputProject)
         console.log(this.data.dateText)
+        this.setData({
+            flag: true
+        })
     },
     clear(){
         this.setData({
-            inputValue: '',
-            dateText:''
+            inputProject: '',
+            inputCompany:'',
+            inputLeader:'',
+            dateText:'',
+            personText:''
         })
-        wx.removeStorageSync('key')
+        wx.removeStorageSync('project')
+        wx.removeStorageSync('company')
+        wx.removeStorageSync('leader')
         wx.removeStorageSync('date')
+        wx.removeStorageSync('person')
+        this.setData({
+            flag: false
+        })
     },
     // 导航栏回退处理逻辑
     handleBack() {

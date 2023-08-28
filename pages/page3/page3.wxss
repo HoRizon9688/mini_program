@@ -6,13 +6,8 @@
     border: 0;
   }
 
-.disabledInput {
-    --td-input-disabled-text-color: @font-gray-1
-}
 
 .button-example {
     margin: 0 32rpx;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32rpx;
+    display: flex;
   }
