@@ -1,3 +1,4 @@
+import Message from 'tdesign-miniprogram/message/index';
 Page({
     data: {
       flag: false,
@@ -29,6 +30,7 @@ Page({
         let user_leader = wx.getStorageSync('leader')
         let user_date = wx.getStorageSync('date')
         let user_person = wx.getStorageSync('person')
+        let user_flag = wx.getStorageSync('flag')
         // console.log(user_project)
         // console.log(user_company)
         // console.log(user_leader)
@@ -58,6 +60,11 @@ Page({
                 personText: user_person
             })
         }
+        if (user_flag){
+            this.setData({
+                flag: user_flag
+            })
+        }
     },
     onPickerConfirm(e){
         const { key } = e.currentTarget.dataset;
@@ -84,7 +91,6 @@ Page({
         },
 
     Project_inputChange(e){
-        // console.log(e)
         wx.setStorageSync('project',this.data.inputProject)
     },
     Company_inputChange(e){
@@ -95,12 +101,24 @@ Page({
         // console.log(e)
         wx.setStorageSync('leader', this.data.inputLeader)
     },
+    showWarnMessage() {
+        Message.warning({
+          context: this,
+          offset: [20, 32],
+          duration: 3000,
+          content: '信息填写不完整，请检查！',
+        });
+      },
     submit(){
-        console.log(this.data.inputProject)
-        console.log(this.data.dateText)
-        this.setData({
-            flag: true
-        })
+        if(this.data.inputProject&&this.data.inputCompany&&this.data.inputLeader){
+            this.setData({
+                flag: true
+            })
+            wx.setStorageSync('flag', this.data.flag)
+        }
+        else{
+            this.showWarnMessage()
+        }
     },
     clear(){
         this.setData({

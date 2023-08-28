@@ -1,13 +1,14 @@
 .panel-item {
     margin-bottom: 32rpx;
-  }
+}
   
 .panel-item::after {
     border: 0;
-  }
-
+}
 
 .button-example {
-    margin: 0 32rpx;
-    display: flex;
-  }
+    margin: 0 50rpx;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50rpx;
+}
