@@ -66,14 +66,22 @@ Page({
             })
         }
     },
+    showPersonPicker() {
+        if(this.data.flag == true){
+            console.log("交底人不允许修改")
+        }
+        else{
+            this.setData({ personVisible: true });
+        }
+        },
     onPickerConfirm(e){
         const { key } = e.currentTarget.dataset;
         const { value } = e.detail;
         // console.log('picker change:', e.detail.value);
         this.setData({
-          [`${key}Visible`]: false,
-          [`${key}Value`]: value,
-          [`${key}Text`]: value.join(' '),
+        [`${key}Visible`]: false,
+        [`${key}Value`]: value,
+        [`${key}Text`]: value.join(' '),
         });
         console.log(this.data.personText)
         wx.setStorageSync('person', this.data.personText)
@@ -86,10 +94,6 @@ Page({
             [`${key}Visible`]: false,
         });
         },
-    onPersonPicker() {
-        this.setData({ personVisible: true });
-        },
-
     Project_inputChange(e){
         wx.setStorageSync('project',this.data.inputProject)
     },
@@ -110,7 +114,7 @@ Page({
         });
       },
     submit(){
-        if(this.data.inputProject&&this.data.inputCompany&&this.data.inputLeader){
+        if(this.data.inputProject&&this.data.inputCompany&&this.data.inputLeader&&this.data.personText&&this.data.dateText){
             this.setData({
                 flag: true
             })
@@ -143,17 +147,22 @@ Page({
     },
     // 日期选择器处理逻辑
     showPicker(e) {
-      const { mode } = e.currentTarget.dataset;
-      this.setData({
-        mode,
-        [`${mode}Visible`]: true,
-      });
+        if (this.data.flag == true){
+            console.log("交底时间不允许修改")
+        }
+        else{
+            const { mode } = e.currentTarget.dataset;
+            this.setData({
+                mode,
+                [`${mode}Visible`]: true,
+            });
+        }
     },
     hidePicker() {
-      const { mode } = this.data;
-      this.setData({
-        [`${mode}Visible`]: false,
-      });
+        const { mode } = this.data;
+        this.setData({
+            [`${mode}Visible`]: false,
+        });
     },
     onConfirm(e) {
       const { value } = e.detail;

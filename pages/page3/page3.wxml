@@ -9,7 +9,7 @@
 <t-input label="工作负责人" placeholder="请输入文字" bindchange="Leader_inputChange" disabled="{{flag}}" model:value="{{inputLeader}}"></t-input>
 <t-input label="交底单位" value="青岛润莱风力发电有限公司" disabled="true"></t-input>
 <!-- 人员选择器 -->
-<t-cell title="交底人" arrow hover note="{{personText}}" bind:click="onPersonPicker"/>
+<t-cell title="交底人" arrow hover note="{{personText}}" bind:click="showPersonPicker"/>
 <t-picker
   visible="{{personVisible}}"
   value="{{personValue}}"
@@ -49,7 +49,7 @@
   end="{{end}}"
 />
 
-<!-- 提交按钮 -->
+<!-- 提交按钮和重新输入按钮 -->
 <view class="button-example">
     <t-button theme="light" bindtap="submit" block size="large" disabled="{{flag}}">确认提交</t-button>
     <t-button theme="light" bindtap="clear" block size="large" disabled="{{flag}}">重新输入</t-button>
