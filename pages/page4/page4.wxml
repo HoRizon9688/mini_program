@@ -1,0 +1,21 @@
+<view class="block">
+  <t-navbar class="block" title="项目简介" left-arrow bind:go-back="handleBack" />
+</view>
+
+<view class="card-theme">
+  <t-swiper
+    current="{{current}}"
+    autoplay="{{autoplay}}"
+    duration="{{duration}}"
+    interval="{{interval}}"
+    bindchange="onChange"
+    navigation="{{ { type: 'dots' } }}"
+    list="{{swiperList}}"
+    image-props="{{ { shape: 'round' } }}"
+    previousMargin="34px"
+    nextMargin="34px"
+    t-class-nav="card-theme-nav"
+  />
+</view>
+
+<mp-html content="{{html}}" />

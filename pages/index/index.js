@@ -11,6 +11,12 @@ Component({
               url: '/pages/page3/page3',
             })
         },
+        jumpPage4: function(){
+            console.log("jump!")
+            wx.navigateTo({
+              url: '/pages/page4/page4'
+            })
+        },
         scanCodeEvent: function(){
             var paperSrc;
             wx.scanCode({

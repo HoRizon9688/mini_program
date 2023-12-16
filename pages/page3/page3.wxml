@@ -55,3 +55,4 @@
     <t-button theme="light" bindtap="clear" block size="large" disabled="{{flag}}">重新输入</t-button>
 </view>
 <t-divider content="交底内容"/>
+<mp-html content="{{html}}" />

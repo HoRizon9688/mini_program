@@ -1,6 +1,21 @@
 import Message from 'tdesign-miniprogram/message/index';
 Page({
     data: {
+      html:
+      '<h3 style="margin: 0 8rpx">一、总则</h3>'+
+      '<p style="margin: 0 10rpx">1.1 风场现场工作必须坚持“安全第一、预防为主、综合治理”方针。</p>'+
+      '<p style="margin: 0 10rpx">1.2 任何工作人员发现有违反本次安全交底内容，并足以危及人身和设备安全者必须予以制止。</p>'+
+      '<p style="margin: 0 10rpx">1.3 各级领导人员都不准发出违反本次安全交底工作的命令。工作人员如接到违反本次安全交底工作的命令，应拒绝执行。</p>'+
+      '<p style="margin: 0 10rpx">1.4 任何工作人员除自己严格执行本次安全交底工作外，还应督促周围人员遵守本次安全交底内容。</p>'+
+      '<h3 style="margin: 0 8rpx">二、不具备以下知识的人员不得操作</h3>'+
+      '<p style="margin: 0 10rpx">2.1 了解可能存在的危险、危险的后果及预防措施。</p>'+
+      '<p style="margin: 0 10rpx">2.2 在危险情况下对线路采取何种安全措施。</p>'+
+      '<p style="margin: 0 10rpx">2.3 能够正确使用防护设备。</p>'+
+      '<p style="margin: 0 10rpx">2.4 能够正确使用安全设备。</p>'+
+      '<p style="margin: 0 10rpx">2.5 熟知线路操作步骤及要求。</p>'+
+      '<p style="margin: 0 10rpx">2.6 熟知与线路相关的故障及其处理方法。</p>'+
+      '<p style="margin: 0 10rpx">2.7 熟悉正确使用工具的方法。</p>'+
+      '<p style="margin: 0 10rpx">2.8 熟知急救知识和技巧。</p>',
       flag: false,
       inputProject:'',
       inputCompany:'',
@@ -105,6 +120,14 @@ Page({
         // console.log(e)
         wx.setStorageSync('leader', this.data.inputLeader)
     },
+    showSuccessMessage() {
+        Message.success({
+          context: this,
+          offset: [20, 32],
+          duration: 5000,
+          content: '提交成功！',
+        });
+      },
     showWarnMessage() {
         Message.warning({
           context: this,
@@ -119,6 +142,7 @@ Page({
                 flag: true
             })
             wx.setStorageSync('flag', this.data.flag)
+            this.showSuccessMessage()
         }
         else{
             this.showWarnMessage()
